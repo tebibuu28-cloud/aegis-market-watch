@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Aegis AI</title>
+    <style>
+        body { background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); overflow: hidden; }
+        .network-bg { position: absolute; width: 200%; height: 200%; background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 50px 50px; transform: rotate(15deg); animation: move 60s linear infinite; z-index: -1; opacity: 0.3; }
+        @keyframes move { from { transform: rotate(15deg) translateY(0); } to { transform: rotate(15deg) translateY(-500px); } }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        @keyframes scan { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+        .animate-blink { animation: blink 1.5s infinite; }
+        .scan-line { animation: scan 8s linear infinite; }
+    </style>
+</head>
+<body class="text-white flex flex-col items-center justify-center min-h-screen font-sans relative p-4">
+    <div class="network-bg"></div>
+    
+    <div class="text-center p-8 border border-slate-800 rounded-3xl bg-slate-900/90 shadow-2xl backdrop-blur-xl relative w-full max-w-sm">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-slate-800 border border-slate-700 px-4 py-1 rounded-full flex items-center gap-2">
+            <div class="w-2 h-2 bg-green-500 rounded-full animate-blink"></div>
+            <span class="text-[10px] uppercase tracking-widest font-bold text-slate-300">System Online</span>
+        </div>
+
+        <h1 class="text-5xl font-extrabold tracking-tighter mb-2 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">AEGIS AI</h1>
+        <p class="text-slate-400 text-sm mb-6">Secure Intelligence for the Modern Frontier.</p>
+        
+        <div class="bg-black/50 rounded-lg p-3 mb-6 h-24 overflow-hidden text-left border border-slate-800 relative">
+            <div id="logs" class="text-[10px] font-mono text-blue-400/80 scan-line">
+                <p>> Initializing core...</p>
+                <p>> Protocol 7.4 active.</p>
+                <p>> Scanning nodes...</p>
+                <p>> Encryption: AES-256</p>
+                <p>> System optimized.</p>
+                <p>> Awaiting user...</p>
+            </div>
+        </div>
+
+        <div class="flex gap-3 justify-center">
+            <a href="dashboard.html" class="px-6 py-2 bg-blue-600 rounded-full font-bold hover:bg-blue-500 transition-all text-sm active:scale-95 shadow-lg shadow-blue-900/40 text-center">Deploy</a>
+            <button class="px-6 py-2 border border-slate-700 rounded-full font-bold text-sm">Docs</button>
+        </div>
+    </div>
+    
+    <p class="mt-8 text-slate-600 text-[10px] uppercase tracking-[0.2em]">End-to-End Encryption Enabled</p>
+</body>
+</html>

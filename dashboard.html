@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Aegis | Dashboard</title>
+    <style>
+        @keyframes pulse-red {
+            0%, 100% { background-color: rgba(220, 38, 38, 0.2); }
+            50% { background-color: rgba(220, 38, 38, 0.5); }
+        }
+        .threat-active { animation: pulse-red 2s infinite; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans p-6 min-h-screen flex flex-col items-center">
+    <div class="w-full max-w-md">
+        <header class="flex justify-between items-center mb-8">
+            <h2 class="text-xl font-bold tracking-tighter text-blue-400 uppercase">Aegis_Core</h2>
+            <div class="px-3 py-1 rounded-full border border-red-500/50 text-[10px] text-red-500 font-mono threat-active shadow-lg shadow-red-900/20">
+                THREAT LEVEL: LOW
+            </div>
+        </header>
+
+        <div class="grid gap-4">
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl shadow-xl">
+                <p class="text-slate-500 text-[10px] uppercase tracking-widest mb-1">Neural Load</p>
+                <div class="flex items-end gap-2">
+                    <span class="text-4xl font-bold text-white">42.8%</span>
+                    <span class="text-green-500 text-xs mb-1 font-mono">↑ 1.2%</span>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl shadow-xl">
+                <p class="text-slate-500 text-[10px] uppercase tracking-widest mb-1">Active Nodes</p>
+                <div class="text-4xl font-bold text-white font-mono">1,024</div>
+            </div>
+        </div>
+
+        <div class="mt-12 flex flex-col gap-4">
+            <button onclick="alert('Scan Initiated: All sectors secure.')" class="w-full py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl text-sm font-bold transition-all active:scale-95">
+                Run Manual Scan
+            </button>
+            <a href="index.html" class="w-full py-3 bg-red-900/20 hover:bg-red-900/40 border border-red-900/50 rounded-xl text-sm font-bold text-red-400 transition-all text-center">
+                Logout & Secure
+            </a>
+        </div>
+
+        <p class="text-center mt-12 text-slate-700 text-[10px] uppercase tracking-widest font-mono">
+            Encrypted Session: XA-7741
+        </p>
+    </div>
+</body>
+</html>
